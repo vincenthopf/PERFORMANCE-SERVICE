@@ -383,9 +383,12 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
         }
 
         .feature-item {
@@ -609,6 +612,10 @@
             .problem-card {
                 flex-basis: 45%;
                 min-width: 280px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, minmax(250px, 1fr));
             }
         }
 
