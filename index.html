@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+/* Checklist style for benefits section */
+        .checklist {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+        
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2em;
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -921,27 +943,29 @@
                     <p>Executive-level performance strategy without fluff, gimmicks, or public exposure</p>
                 </div>
             </div>
+            
+            <div class="fade-in" style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
+                <p>Your sleep dictates your ability to operate at the highest level. Your energy is your most valuable asset. Without it, everything slows. Your thinking, your execution, your ability to scale and lead.</p>
+            </div>
         </div>
     </section>
 
     <!-- Value Proposition -->
     <section class="content-section">
         <div class="container">
-            <div class="fade-in" style="text-align: center; margin-bottom: 40px;">
-                <p>Your sleep dictates your ability to operate at the highest level. Your energy is your most valuable asset. Without it, everything slows. Your thinking, your execution, your ability to scale and lead.</p>
+            <div class="benefit-section" style="max-width: 800px; margin: 0 auto; background: rgba(12, 12, 12, 0.8); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                <h2 class="section-title fade-in" style="text-align: left; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid var(--accent-color); width: auto; display: inline-block;">The High-Performance Blueprint will help you:</h2>
+                <ul class="checklist fade-in">
+                    <li>Fall asleep quickly and stay asleep without supplements or screens</li>
+                    <li>Eliminate 3am wake-ups and afternoon crashes</li>
+                    <li>Rebuild your mental clarity, energy, and emotional control</li>
+                    <li>Regain your ability to lead calmly and with authority</li>
+                    <li>Feel more present and connected at home</li>
+                    <li>Make faster, sharper, more profitable decisions</li>
+                </ul>
             </div>
 
-            <h2 class="section-title fade-in">The High-Performance Blueprint will help you:</h2>
-            <ul class="benefits-list">
-                <li class="fade-in">Fall asleep quickly and stay asleep without supplements or screens</li>
-                <li class="fade-in">Eliminate 3am wake-ups and afternoon crashes</li>
-                <li class="fade-in">Rebuild your mental clarity, energy, and emotional control</li>
-                <li class="fade-in">Regain your ability to lead calmly and with authority</li>
-                <li class="fade-in">Feel more present and connected at home</li>
-                <li class="fade-in">Make faster, sharper, more profitable decisions</li>
-            </ul>
-
-            <div class="highlight-box fade-in" style="text-align: center;">
+            <div class="highlight-box fade-in" style="text-align: center; margin-top: 60px;">
                 <h3>You don't need more stimulation. You need a new operating system.</h3>
             </div>
         </div>
