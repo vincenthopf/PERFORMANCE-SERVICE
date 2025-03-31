@@ -302,19 +302,32 @@
         .eligibility-column {
             flex: 1;
             min-width: 280px;
-            background: var(--glass-effect);
+            background: rgba(20, 20, 20, 0.8);
             padding: 25px;
             border-radius: 15px;
             backdrop-filter: blur(5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(65, 105, 225, 0.2);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .eligibility-column:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            border-color: rgba(65, 105, 225, 0.2);
+        .eligibility-column::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--glow-color) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .eligibility-column:hover::before {
+            opacity: 1;
         }
 
         .eligibility-column h3 {
