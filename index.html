@@ -283,33 +283,28 @@
             opacity: 1;
         }
 
+        /* Unified style for h3 within highlight-box */
         .highlight-box h3 {
             margin-top: 0;
-            font-size: 1.8em;
-            color: var(--accent-color); /* Default H3 color */
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.5em;       /* Standardized Size */
+            color: var(--text-color); /* Standardized Color (White) */
+            text-transform: none;   /* Standardized Case */
+            letter-spacing: normal; /* Standardized Spacing */
+            font-weight: 600;       /* Standardized Weight */
             margin-bottom: 20px;
-            text-align: center;
-            font-weight: 600; /* Default weight */
+            text-align: center;     /* Default Alignment (can be overridden) */
         }
 
-        /* Class to make specific h3 headers white */
-        .highlight-box h3.white-header {
-            color: var(--text-color); /* White color */
-        }
-
-
-        /* Style for 'But now:' header inside problem-summary-card */
+        /* Specific style for 'But now:' header inside problem-summary-card */
         .problem-summary-card > h3.moved-header {
-            font-size: 1.8em;
-            color: var(--text-color); /* White color */
-            text-transform: uppercase; /* Uppercase */
-            letter-spacing: 1px; /* 1px letter spacing */
+            font-size: 1.5em;       /* Standardized Size */
+            color: var(--text-color); /* Standardized Color (White) */
+            text-transform: none;   /* Standardized Case */
+            letter-spacing: normal; /* Standardized Spacing */
+            font-weight: 600;       /* Standardized Weight */
             margin-top: 30px;
             margin-bottom: 25px;
-            text-align: center;
-            font-weight: 600; /* Consistent font weight */
+            text-align: center;     /* Keep Center Alignment */
         }
 
 
@@ -358,16 +353,17 @@
             opacity: 1;
         }
 
+        /* Standardized style for eligibility column h3 */
         .eligibility-column h3 {
-            font-size: 1.5em;
+            font-size: 1.5em;       /* Standardized Size */
+            color: var(--text-color); /* Standardized Color (White) */
+            text-transform: none;   /* Standardized Case */
+            letter-spacing: normal; /* Standardized Spacing */
+            font-weight: 600;       /* Standardized Weight */
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
-            text-align: left;
-            color: var(--text-color); /* White color */
-            text-transform: none;
-            letter-spacing: normal;
-            font-weight: 600;
+            text-align: left;      /* Keep Left Alignment */
         }
 
 
@@ -727,14 +723,16 @@
             margin-bottom: 30px;
         }
 
-         .value-summary-card h3 { /* Style for "You don't need more stimulation..." */
-            color: white;
-            font-size: 1.8em;
-            text-transform: none;
-            letter-spacing: normal;
+         /* Standardized style for h3 inside value-summary-card */
+         .value-summary-card h3 {
+            font-size: 1.5em;       /* Standardized Size */
+            color: var(--text-color); /* Standardized Color (White) */
+            text-transform: none;   /* Standardized Case */
+            letter-spacing: normal; /* Standardized Spacing */
+            font-weight: 600;       /* Standardized Weight */
             margin-top: 0;
             margin-bottom: 0;
-            text-align: center;
+            text-align: center;     /* Keep Center Alignment */
          }
 
 
@@ -743,9 +741,23 @@
             .problem-summary-card, .value-summary-card {
                 padding: 30px;
             }
+             /* Keep specific h3 size adjustment for value card on small screens */
              .value-summary-card h3 {
-                font-size: 1.5em;
+                font-size: 1.5em; /* Example size adjustment */
              }
+             /* Adjust problem card h3 on small screens */
+            .problem-summary-card > h3.moved-header {
+                font-size: 1.5em;
+            }
+             /* Adjust eligibility h3 on small screens */
+            .eligibility-column h3 {
+                font-size: 1.3em;
+            }
+             /* Adjust highlight box h3 on small screens */
+            .highlight-box h3 {
+                font-size: 1.3em;
+            }
+
             .video-grid {
                 grid-template-columns: 1fr;
                 justify-items: center;
@@ -969,7 +981,7 @@
                 <p>You operate in a world where every second, every thought, every move counts.<br>A single bad decision can cost thousands.<br>A sluggish morning can slow an entire empire.<br>The difference between exceptional success and stagnation often comes down to the unseen variables,<br>your cognitive sharpness, your ability to execute with precision,<br>and the resilience to sustain high-pressure performance.</p>
                 <p>Your ability to sustain peak output isn't just about working harder,<br>it's about removing friction, eliminating fatigue,<br>and unlocking a level of clarity and stamina that most entrepreneurs never access.</p>
                 <p>You've built the business. You've made the money. You've proven you can outwork everyone around you.</p>
-                <!-- Updated h3 style -->
+                <!-- Standardized h3 style -->
                 <h3 class="moved-header">But now:</h3>
                 <ul class="eligibility-list not-for-you-list">
                     <li>You can't switch off</li>
@@ -1007,7 +1019,7 @@
     <!-- Testimonials (Hidden) -->
     <section class="testimonials" style="display: none;">
         <div class="container">
-            <h2 class="section-title fade-in">WHAT OTHERS ARE SAYING</h2>
+            <h2 class="section-title fade-in">What others are saying</h2>
             <div class="testimonial-container">
                 <div class="testimonial-card fade-in">
                     <p class="testimonial-quote">Placeholder for testimonial content</p>
@@ -1028,13 +1040,13 @@
     <section class="content-section" style="padding-top: 0; padding-bottom: 15px;">
         <div class="container">
             <div class="highlight-box fade-in" style="margin-top: 0; margin-bottom: 0;">
-                <!-- Added white-header class -->
-                <h3 class="white-header">You don't need more hacks. You need a system.</h3>
+                <!-- Standardized h3 style -->
+                <h3>You don't need more hacks. You need a system.</h3>
                 <p>The High-Performance Blueprint is a private, six-month high-performance program for elite founders and executives whose sleep, energy, and focus are silently sabotaging their edge and potentially costing thousands in lost productivity.</p>
                 <p>It's not coaching. It's a complete physiological, cognitive, and performance rebuild designed to restore the version of you who built the empire in the first place.</p>
                 <div style="margin-top: 40px;">
-                    <!-- Added white-header class -->
-                    <h3 class="white-header">Precision, Not Guesswork</h3>
+                    <!-- Standardized h3 style -->
+                    <h3>Precision, Not Guesswork</h3>
                     <p>We take a scientific, data-backed approach to recalibrate your sleep architecture, using biometric tracking, circadian rhythm alignment, and high-performance recovery protocols to ensure you wake up operating at full capacity.</p>
                 </div>
             </div>
@@ -1046,6 +1058,7 @@
         <div class="container">
             <div class="eligibility-section" style="margin-bottom: 30px;">
                 <div class="eligibility-column fade-in">
+                     <!-- Standardized h3 style -->
                     <h3>This is for you if:</h3>
                     <ul class="eligibility-list for-you-list">
                         <li>You're a six or seven-figure founder, CEO, or operator</li>
@@ -1057,6 +1070,7 @@
                     </ul>
                 </div>
                 <div class="eligibility-column fade-in">
+                     <!-- Standardized h3 style -->
                     <h3>This is not for:</h3>
                     <ul class="eligibility-list not-for-you-list">
                         <li>Anyone looking for cheap advice or plug-and-play coaching</li>
@@ -1107,7 +1121,7 @@
     </section>
 
     <!-- Value Proposition Section -->
-    <section class="content-section" style="padding-top: 0; padding-bottom: 0;">
+    <section class="content-section" style="padding-top: 0; padding-bottom: 30px;"> <!-- Added padding-bottom -->
         <div class="container">
              <!-- New Card for Value Summary -->
             <div class="value-summary-card fade-in">
@@ -1121,6 +1135,7 @@
                     <li>Feel more present and connected at home</li>
                     <li>Make faster, sharper, more profitable decisions</li>
                 </ul>
+                 <!-- Standardized h3 style -->
                 <h3>You don't need more stimulation.<br>You need a new operating system.</h3>
             </div>
              <!-- End New Card -->
@@ -1128,7 +1143,8 @@
     </section>
 
     <!-- Application Section -->
-    <section id="apply" class="apply-section" style="padding-top: 60px; padding-bottom: 30px;">
+     <!-- Adjusted padding-top for equal spacing -->
+    <section id="apply" class="apply-section" style="padding-top: 30px; padding-bottom: 30px;">
         <div class="container">
             <div class="apply-content fade-in">
                 <h2 class="section-title" style="color: var(--accent-color);">Apply for Consideration</h2>
@@ -1143,7 +1159,7 @@
     <!-- Testimonials Section 2 -->
     <section class="testimonials" style="padding-top: 30px; padding-bottom: 80px;">
         <div class="container">
-            <h2 class="section-title fade-in">WHAT OTHERS ARE SAYING</h2>
+            <h2 class="section-title fade-in">What others are saying</h2>
             <div class="video-container fade-in">
                 <div class="video-grid">
                     <div class="video-item">
