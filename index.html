@@ -168,7 +168,7 @@
 
         /* Main Content */
         .content-section {
-            padding: 100px 0;
+            padding: 100px 0; /* Default padding */
             position: relative;
         }
 
@@ -193,13 +193,13 @@
             border-radius: 15px;
             border: 1px solid rgba(40, 40, 40, 0.6);
         }
-        
+
         .cons-list {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .cons-list li {
             margin-bottom: 15px;
             padding: 10px 10px 10px 40px;
@@ -208,7 +208,7 @@
             line-height: 1.5;
             text-align: left;
         }
-        
+
         .cross-icon {
             position: absolute;
             left: 10px;
@@ -249,13 +249,13 @@
             background: rgba(20, 20, 20, 0.8);
             border-radius: 20px;
             padding: 40px;
-            margin: 60px 0;
+            margin: 60px 0; /* Default margin */
             position: relative;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(65, 105, 225, 0.2);
             backdrop-filter: blur(10px);
-            text-align: center;
+            text-align: center; /* Default alignment */
         }
 
         .highlight-box::before {
@@ -278,24 +278,31 @@
         .highlight-box h3 {
             margin-top: 0;
             font-size: 1.8em;
-            color: var(--accent-color);
+            color: var(--accent-color); /* Default H3 color in highlight box */
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
-            text-align: center;
+            text-align: center; /* Default to center */
         }
-        
-        /* Only left-align the eligibility box headings */
-        .eligibility-section .highlight-box h3 {
-            text-align: center;
+
+        /* Special case for 'But now:' h3 inside highlight box */
+        .highlight-box > h3.moved-header {
+            font-size: 1.8em;
+            color: var(--text-color); /* White color */
+            text-transform: none;
+            letter-spacing: normal;
+            margin-bottom: 25px;
+            text-align: center; /* Center alignment */
+            font-weight: 600;
         }
+
 
         /* Eligibility */
         .eligibility-section {
             display: flex;
             justify-content: space-between;
             gap: 30px;
-            margin: 60px 0;
+            /* margin-bottom: 60px; /* Removed default margin-bottom, handled by inline style below */
             flex-wrap: wrap;
         }
 
@@ -336,7 +343,12 @@
             position: relative;
             padding-bottom: 10px;
             text-align: left;
+            color: var(--text-color); /* White color */
+            text-transform: none;
+            letter-spacing: normal;
+            font-weight: 600;
         }
+
 
         .eligibility-column h3::after {
             content: none;
@@ -379,7 +391,7 @@
 
         /* Features */
         .features-section {
-            margin: 80px 0;
+             /* Removed margin: 80px 0; -> Use section padding */
         }
 
         .features-grid {
@@ -438,7 +450,7 @@
             margin-bottom: 15px;
             display: block;
         }
-        
+
         .feature-item p {
             font-size: 0.95em;
             line-height: 1.4;
@@ -473,7 +485,7 @@
             height: 100%;
             display: flex;
             align-items: center;
-            text-align: center;
+            text-align: center; /* Centered text in benefit items */
         }
 
         .benefits-list li:hover {
@@ -490,6 +502,7 @@
             height: 2px;
             background-color: var(--accent-color);
             top: 50%;
+            transform: translateY(-50%); /* Center vertically */
         }
 
         /* Apply Section */
@@ -526,13 +539,13 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         /* Video testimonials */
         .video-container {
             margin-top: 60px;
             text-align: center;
         }
-        
+
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -541,7 +554,7 @@
             justify-items: center;
             justify-content: center;
         }
-        
+
         .video-item {
             border-radius: 12px;
             overflow: hidden;
@@ -554,13 +567,13 @@
             width: 100%;
             max-width: 400px;
         }
-        
+
         .video-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border-color: rgba(65, 105, 225, 0.4);
         }
-        
+
         .video-item iframe {
             position: absolute;
             top: 0;
@@ -569,13 +582,13 @@
             height: 100%;
             border-radius: 12px;
         }
-        
+
         @media (max-width: 768px) {
             .video-grid {
                 grid-template-columns: 1fr;
                 justify-items: center;
             }
-            
+
             .video-item {
                 width: 100%;
                 max-width: 90%;
@@ -609,20 +622,20 @@
             .main-title {
                 font-size: 2.8em;
             }
-            
+
             .container {
                 padding: 0 30px;
             }
-            
+
             .problem-card {
                 flex-basis: 45%;
                 min-width: 280px;
             }
-            
+
             .features-grid {
                 grid-template-columns: repeat(2, minmax(250px, 1fr));
             }
-            
+
             .benefits-list {
                 grid-template-columns: repeat(2, minmax(250px, 1fr));
             }
@@ -658,7 +671,7 @@
             .benefits-list {
                 grid-template-columns: 1fr;
             }
-            
+
             .eligibility-column {
                 flex-basis: 100%;
             }
@@ -753,6 +766,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Section Divider */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(65, 105, 225, 0.3), transparent);
+            margin: 60px auto; /* Default margin */
+            max-width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -777,19 +799,17 @@
     </section>
 
     <!-- Problem Section -->
-    <section id="problem" class="content-section">
+    <section id="problem" class="content-section" style="padding-bottom: 0;">
         <div class="container">
-            <h2 class="section-title fade-in">The High Stakes of Performance</h2>
-            <div class="fade-in" style="text-align: center;">
+            <div class="fade-in" style="text-align: center; margin-bottom: 40px;">
                 <p>You operate in a world where every second, every thought, every move counts. A single bad decision can cost thousands. A sluggish morning can slow an entire empire. The difference between exceptional success and stagnation often comes down to the unseen variables, your cognitive sharpness, your ability to execute with precision, and the resilience to sustain high-pressure performance.</p>
                 <p>Your ability to sustain peak output isn't just about working harder, it's about removing friction, eliminating fatigue, and unlocking a level of clarity and stamina that most entrepreneurs never access.</p>
                 <p>You've built the business. You've made the money. You've proven you can outwork everyone around you.</p>
             </div>
 
-            <h3 class="section-title fade-in" style="margin-top: 60px;">But now:</h3>
-            
             <div class="highlight-box fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <ul class="eligibility-list not-for-you-list">
+                <h3 class="moved-header">But now:</h3>
+                <ul class="eligibility-list not-for-you-list" style="text-align: left;">
                     <li>You can't switch off</li>
                     <li>You wake up at 3am wired and restless</li>
                     <li>Your energy crashes mid-morning</li>
@@ -802,9 +822,9 @@
             <div class="fade-in" style="text-align: center; margin-top: 50px;">
                 <p>This isn't burnout. It's erosion. And it's costing you more than you think.</p>
             </div>
-            
+
             <!-- First Testimonials -->
-            <div class="video-container fade-in" style="margin-top: 60px; margin-bottom: 40px;">
+            <div class="video-container fade-in" style="margin-top: 60px; margin-bottom: 15px;">
                 <h2 class="section-title fade-in">WHAT OTHERS ARE SAYING</h2>
                 <div class="video-grid">
                     <div class="video-item">
@@ -821,7 +841,7 @@
         </div>
     </section>
 
-                <!-- Testimonials -->
+                <!-- Testimonials (Hidden) -->
     <section class="testimonials" style="display: none;">
         <div class="container">
             <h2 class="section-title fade-in">WHAT OTHERS ARE SAYING</h2>
@@ -838,12 +858,10 @@
         </div>
     </section>
 
-    <hr class="section-divider">
-
     <!-- Solution Section -->
-    <section class="content-section" style="padding-top: 25px; padding-bottom: 20px;">
+    <section class="content-section" style="padding-top: 15px; padding-bottom: 15px;">
         <div class="container">
-            <div class="highlight-box fade-in">
+            <div class="highlight-box fade-in" style="margin-top: 0; margin-bottom: 0;">
                 <h3>You don't need more hacks. You need a system.</h3>
                 <p>The High-Performance Blueprint is a private, six-month high-performance program for elite founders and executives whose sleep, energy, and focus are silently sabotaging their edge and potentially costing thousands in lost productivity.</p>
                 <p>It's not coaching. It's a complete physiological, cognitive, and performance rebuild designed to restore the version of you who built the empire in the first place.</p>
@@ -856,9 +874,11 @@
     </section>
 
     <!-- Eligibility Section -->
-    <section class="content-section" style="padding-top: 10px; padding-bottom: 20px;">
+    <!-- Adjusted padding-bottom to create 30px space before HR -->
+    <section class="content-section" style="padding-top: 15px; padding-bottom: 0;">
         <div class="container">
-            <div class="eligibility-section">
+             <!-- Added inline style to set margin-bottom to 30px -->
+            <div class="eligibility-section" style="margin-bottom: 30px;">
                 <div class="eligibility-column fade-in">
                     <h3>This is for you if:</h3>
                     <ul class="eligibility-list for-you-list">
@@ -884,10 +904,11 @@
         </div>
     </section>
 
-    <hr class="section-divider">
+    <hr class="section-divider"> <!-- Divider remains here -->
 
     <!-- Features Section -->
-    <section class="features-section content-section" style="padding-top: 25px; margin-top: 0;">
+    <!-- Adjusted padding-top to create 30px space after HR -->
+    <section class="features-section content-section" style="padding-top: 30px; padding-bottom: 20px;">
         <div class="container">
             <h2 class="section-title fade-in">Inside The High-Performance Blueprint, you'll receive:</h2>
             <div class="features-grid">
@@ -916,7 +937,7 @@
                     <p>Executive-level performance strategy without fluff, gimmicks, or public exposure</p>
                 </div>
             </div>
-            
+
             <div class="fade-in" style="text-align: center; margin-top: 60px; margin-bottom: 40px;">
                 <p>Your sleep dictates your ability to operate at the highest level. Your energy is your most valuable asset. Without it, everything slows. Your thinking, your execution, your ability to scale and lead.</p>
             </div>
@@ -926,12 +947,12 @@
     <hr class="section-divider">
 
     <!-- Value Proposition -->
-    <section class="content-section" style="padding-top: 50px;">
+    <section class="content-section" style="padding-top: 50px; padding-bottom: 20px;">
         <div class="container">
             <h2 class="section-title fade-in" style="margin-bottom: 30px;">The High-Performance Blueprint will help you:</h2>
-            
-            <div class="highlight-box fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <ul class="eligibility-list for-you-list">
+
+            <div class="highlight-box fade-in" style="max-width: 800px; margin: 60px auto 0;">
+                 <ul class="eligibility-list for-you-list" style="text-align: left;">
                     <li>Fall asleep quickly and stay asleep without supplements or screens</li>
                     <li>Eliminate 3am wake-ups and afternoon crashes</li>
                     <li>Rebuild your mental clarity, energy, and emotional control</li>
@@ -941,7 +962,7 @@
                 </ul>
             </div>
 
-            <div class="highlight-box fade-in" style="text-align: center; margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="highlight-box fade-in" style="text-align: center; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <h3 style="color: white;">You don't need more stimulation.<br>You need a new operating system.</h3>
             </div>
         </div>
@@ -998,21 +1019,21 @@
 
         // Fade in elements on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
-        
+
         function checkFade() {
             fadeElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = window.innerHeight - 100;
-                
+
                 if (elementTop < elementVisible) {
                     element.classList.add('appear');
                 }
             });
         }
-        
+
         // Check elements on load
         window.addEventListener('load', checkFade);
-        
+
         // Check elements on scroll
         window.addEventListener('scroll', checkFade);
     </script>
