@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Performance</title>
+    <title>Elite Sleep & Performance Service</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -256,19 +256,27 @@
             border: 1px solid rgba(65, 105, 225, 0.2);
             backdrop-filter: blur(10px);
             text-align: center; /* Default alignment */
+            transition: all 0.3s ease;
+            z-index: 1;
         }
 
         .highlight-box::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--glow-color) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), transparent);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.3s ease;
             z-index: -1;
+        }
+
+         .highlight-box:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+             border-color: rgba(65, 105, 225, 0.3);
         }
 
         .highlight-box:hover::before {
@@ -278,22 +286,30 @@
         .highlight-box h3 {
             margin-top: 0;
             font-size: 1.8em;
-            color: var(--accent-color); /* Default H3 color in highlight box */
+            color: var(--accent-color); /* Default H3 color */
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 20px;
-            text-align: center; /* Default to center */
+            text-align: center;
+            font-weight: 600; /* Default weight */
         }
 
-        /* Special case for 'But now:' h3 inside highlight box */
-        .highlight-box > h3.moved-header {
+        /* Class to make specific h3 headers white */
+        .highlight-box h3.white-header {
+            color: var(--text-color); /* White color */
+        }
+
+
+        /* Style for 'But now:' header inside problem-summary-card */
+        .problem-summary-card > h3.moved-header {
             font-size: 1.8em;
             color: var(--text-color); /* White color */
-            text-transform: none;
-            letter-spacing: normal;
+            text-transform: uppercase; /* Uppercase */
+            letter-spacing: 1px; /* 1px letter spacing */
+            margin-top: 30px;
             margin-bottom: 25px;
-            text-align: center; /* Center alignment */
-            font-weight: 600;
+            text-align: center;
+            font-weight: 600; /* Consistent font weight */
         }
 
 
@@ -302,7 +318,6 @@
             display: flex;
             justify-content: space-between;
             gap: 30px;
-            /* margin-bottom: 60px; /* Removed default margin-bottom, handled by inline style below */
             flex-wrap: wrap;
         }
 
@@ -318,21 +333,27 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+             z-index: 1;
         }
 
         .eligibility-column::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--glow-color) 0%, transparent 50%);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), transparent);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.3s ease;
             z-index: -1;
         }
 
+        .eligibility-column:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+             border-color: rgba(65, 105, 225, 0.3);
+        }
         .eligibility-column:hover::before {
             opacity: 1;
         }
@@ -357,6 +378,7 @@
         .eligibility-list {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         .eligibility-list li {
@@ -583,7 +605,147 @@
             border-radius: 12px;
         }
 
+        /* Card Style for Problem Summary */
+        .problem-summary-card {
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 800px;
+            position: relative; /* Needed for ::before */
+            overflow: hidden; /* Needed for ::before */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(65, 105, 225, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease; /* Added transition for smoothness */
+            z-index: 1; /* Ensure content is above pseudo-element */
+        }
+
+        /* Add the glow pseudo-element */
+        .problem-summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1; /* Place behind content */
+        }
+
+        /* Activate glow on hover */
+        .problem-summary-card:hover {
+             transform: translateY(-5px); /* Optional: slight lift on hover */
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+             border-color: rgba(65, 105, 225, 0.3); /* Slightly brighter border */
+        }
+        .problem-summary-card:hover::before {
+            opacity: 1;
+        }
+
+        .problem-summary-card p {
+             margin-bottom: 1.1em;
+             text-align: center;
+        }
+        .problem-summary-card p:last-of-type { /* Target the last paragraph inside the card div */
+            margin-bottom: 0; /* Remove margin from the very last paragraph */
+        }
+
+        .problem-summary-card ul {
+            text-align: left;
+             max-width: fit-content;
+             margin-left: auto;
+             margin-right: auto;
+        }
+
+         /* Card Style for Value Summary */
+        .value-summary-card {
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 0 auto;
+            max-width: 800px;
+            position: relative; /* Needed for ::before */
+            overflow: hidden; /* Needed for ::before */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(65, 105, 225, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease; /* Added transition for smoothness */
+            z-index: 1; /* Ensure content is above pseudo-element */
+        }
+
+        /* Add the glow pseudo-element */
+        .value-summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(65, 105, 225, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1; /* Place behind content */
+        }
+
+        /* Activate glow on hover */
+        .value-summary-card:hover {
+             transform: translateY(-5px); /* Optional: slight lift on hover */
+             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+             border-color: rgba(65, 105, 225, 0.3); /* Slightly brighter border */
+        }
+        .value-summary-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-summary-card p {
+            margin-bottom: 1.1em;
+            text-align: center;
+        }
+
+        /* Target the paragraph *before* the list heading */
+        .value-summary-card p:first-of-type {
+             margin-bottom: 30px; /* Add space after the first paragraph */
+        }
+
+        .value-summary-card .list-heading { /* Style for "The High-Performance Blueprint will help you:" */
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+         .value-summary-card ul {
+            text-align: left;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+         .value-summary-card h3 { /* Style for "You don't need more stimulation..." */
+            color: white;
+            font-size: 1.8em;
+            text-transform: none;
+            letter-spacing: normal;
+            margin-top: 0;
+            margin-bottom: 0;
+            text-align: center;
+         }
+
+
         @media (max-width: 768px) {
+            /* Existing media queries */
+            .problem-summary-card, .value-summary-card {
+                padding: 30px;
+            }
+             .value-summary-card h3 {
+                font-size: 1.5em;
+             }
             .video-grid {
                 grid-template-columns: 1fr;
                 justify-items: center;
@@ -789,7 +951,7 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="main-title">THE ELITE SLEEP & PERFORMANCE SERVICE</h1>
+            <h1 class="main-title">ELITE SLEEP & PERFORMANCE SERVICE</h1>
             <p class="sub-title">Rebuild your clarity, control, and performance with the only private sleep and nervous system protocol designed for elite men who carry everything on their shoulders.</p>
             <a href="https://tally.so/r/w8MGZl" target="_blank" class="cta-button">APPLY NOW</a>
         </div>
@@ -801,15 +963,15 @@
     <!-- Problem Section -->
     <section id="problem" class="content-section" style="padding-bottom: 0;">
         <div class="container">
-            <div class="fade-in" style="text-align: center; margin-bottom: 40px;">
-                <p>You operate in a world where every second, every thought, every move counts.<br> A single bad decision can cost thousands.<br>A sluggish morning can slow an entire empire.<br>The difference between exceptional success and stagnation often comes down to the unseen variables,<br>your cognitive sharpness, your ability to execute with precision,<br>and the resilience to sustain high-pressure performance.</p>
+
+            <!-- New Card for Problem Summary -->
+            <div class="problem-summary-card fade-in">
+                <p>You operate in a world where every second, every thought, every move counts.<br>A single bad decision can cost thousands.<br>A sluggish morning can slow an entire empire.<br>The difference between exceptional success and stagnation often comes down to the unseen variables,<br>your cognitive sharpness, your ability to execute with precision,<br>and the resilience to sustain high-pressure performance.</p>
                 <p>Your ability to sustain peak output isn't just about working harder,<br>it's about removing friction, eliminating fatigue,<br>and unlocking a level of clarity and stamina that most entrepreneurs never access.</p>
                 <p>You've built the business. You've made the money. You've proven you can outwork everyone around you.</p>
-            </div>
-
-            <div class="highlight-box fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <!-- Updated h3 style -->
                 <h3 class="moved-header">But now:</h3>
-                <ul class="eligibility-list not-for-you-list" style="text-align: left;">
+                <ul class="eligibility-list not-for-you-list">
                     <li>You can't switch off</li>
                     <li>You wake up at 3am wired and restless</li>
                     <li>Your energy crashes mid-morning</li>
@@ -817,11 +979,9 @@
                     <li>Your mood flips without warning</li>
                     <li>Your family is getting what's left of you, not the best of you</li>
                 </ul>
+                 <p style="margin-top: 30px;">This isn't burnout. It's erosion. And it's costing you more than you think.</p>
             </div>
-
-            <div class="fade-in" style="text-align: center; margin-top: 50px; margin-bottom: 0;">
-                <p>This isn't burnout. It's erosion. And it's costing you more than you think.</p>
-            </div>
+            <!-- End New Card -->
 
             <!-- Divider 1 -->
             <hr class="section-divider" style="margin: 30px auto;">
@@ -868,12 +1028,14 @@
     <section class="content-section" style="padding-top: 0; padding-bottom: 15px;">
         <div class="container">
             <div class="highlight-box fade-in" style="margin-top: 0; margin-bottom: 0;">
-                <h3>You don't need more hacks. You need a system.</h3>
-                <p>The High-Performance Blueprint is a private, six-month high-performance program for elite founders and executives<br>whose sleep, energy, and focus are silently sabotaging their edge and potentially costing thousands in lost productivity.</p>
-                <p>It's not coaching. It's a complete physiological, cognitive, and performance rebuild<br>designed to restorethe version of you who built the empire in the first place.</p>
+                <!-- Added white-header class -->
+                <h3 class="white-header">You don't need more hacks. You need a system.</h3>
+                <p>The High-Performance Blueprint is a private, six-month high-performance program for elite founders and executives whose sleep, energy, and focus are silently sabotaging their edge and potentially costing thousands in lost productivity.</p>
+                <p>It's not coaching. It's a complete physiological, cognitive, and performance rebuild designed to restore the version of you who built the empire in the first place.</p>
                 <div style="margin-top: 40px;">
-                    <h3>Precision, Not Guesswork</h3>
-                    <p>We take a scientific, data-backed approach to recalibrate your sleep architecture,<br>using biometric tracking, circadian rhythm alignment,<br>and high-performance recovery protocols to ensure you wake up operating at full capacity.</p>
+                    <!-- Added white-header class -->
+                    <h3 class="white-header">Precision, Not Guesswork</h3>
+                    <p>We take a scientific, data-backed approach to recalibrate your sleep architecture, using biometric tracking, circadian rhythm alignment, and high-performance recovery protocols to ensure you wake up operating at full capacity.</p>
                 </div>
             </div>
         </div>
@@ -912,7 +1074,7 @@
     <hr class="section-divider" style="margin: 30px auto;">
 
     <!-- Features Section -->
-    <section class="features-section content-section" style="padding-top: 0; padding-bottom: 20px;">
+    <section class="features-section content-section" style="padding-top: 0; padding-bottom: 30px;">
         <div class="container">
             <h2 class="section-title fade-in">Inside The High-Performance Blueprint, you'll receive:</h2>
             <div class="features-grid">
@@ -944,20 +1106,14 @@
         </div>
     </section>
 
-    <!-- Divider 4 -->
-    <hr class="section-divider" style="margin-top: 60px; margin-bottom: 30px;">
-
-    <!-- Value Proposition -->
-    <!-- Adjusted padding-top and bottom -->
+    <!-- Value Proposition Section -->
     <section class="content-section" style="padding-top: 0; padding-bottom: 0;">
         <div class="container">
-            <div class="fade-in" style="text-align: center; margin-bottom: 30px;">
-                <p>Your sleep dictates your ability to operate at the highest level.<br>Your energy is your most valuable asset.<br>Without it, everything slows.<br>Your thinking, your execution, your ability to scale and lead.</p>
-            </div>
-            <p class="fade-in" style="text-align: center; font-size: 1.2em; font-weight: 600; margin-bottom: 30px;">The High-Performance Blueprint will help you:</p>
-
-            <div class="highlight-box fade-in" style="max-width: 800px; margin: 0 auto;">
-                 <ul class="eligibility-list for-you-list" style="text-align: left;">
+             <!-- New Card for Value Summary -->
+            <div class="value-summary-card fade-in">
+                 <p>Your sleep dictates your ability to operate at the highest level. Your energy is your most valuable asset. Without it, everything slows. Your thinking, your execution, your ability to scale and lead.</p>
+                 <p class="list-heading">The High-Performance Blueprint will help you:</p>
+                 <ul class="eligibility-list for-you-list">
                     <li>Fall asleep quickly and stay asleep without supplements or screens</li>
                     <li>Eliminate 3am wake-ups and afternoon crashes</li>
                     <li>Rebuild your mental clarity, energy, and emotional control</li>
@@ -965,19 +1121,14 @@
                     <li>Feel more present and connected at home</li>
                     <li>Make faster, sharper, more profitable decisions</li>
                 </ul>
+                <h3>You don't need more stimulation.<br>You need a new operating system.</h3>
             </div>
-
-            <div class="highlight-box fade-in" style="text-align: center; margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto; margin-bottom: 0;">
-                <h3 style="color: white;">You don't need more stimulation.<br>You need a new operating system.</h3>
-            </div>
+             <!-- End New Card -->
         </div>
     </section>
 
-    <!-- Divider 5 REMOVED -->
-
     <!-- Application Section -->
-     <!-- Increased padding-top for double spacing, removed bottom padding -->
-    <section id="apply" class="apply-section" style="padding-top: 60px; padding-bottom: 0;">
+    <section id="apply" class="apply-section" style="padding-top: 60px; padding-bottom: 30px;">
         <div class="container">
             <div class="apply-content fade-in">
                 <h2 class="section-title" style="color: var(--accent-color);">Apply for Consideration</h2>
@@ -989,10 +1140,7 @@
         </div>
     </section>
 
-    <!-- Divider 6 REMOVED -->
-
     <!-- Testimonials Section 2 -->
-    <!-- Adjusted padding-top for half spacing -->
     <section class="testimonials" style="padding-top: 30px; padding-bottom: 80px;">
         <div class="container">
             <h2 class="section-title fade-in">WHAT OTHERS ARE SAYING</h2>
